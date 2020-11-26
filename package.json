@@ -1,0 +1,19 @@
+{
+  "name": "@autofiy/property",
+  "version": "1.0.0",
+  "description": "property utils for autofiy framework",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/autofiy/property.git"
+  },
+  "author": "Ali Faris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/autofiy/property/issues"
+  },
+  "homepage": "https://github.com/autofiy/property#readme"
+}
