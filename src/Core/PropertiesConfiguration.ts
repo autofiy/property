@@ -12,7 +12,8 @@ export interface PropertiesConfiguration {
     renderValue?: {
         [name: string]: (property: Property, data: any, autofiyable: any) => any;
     },
-    transformer? : {
-        [name : string] : (autofiyable :any) => Transformer
-    }
+    transformer?: {
+        [name: string]: (autofiyable: any) => Transformer
+    },
+    extra?: any;
 }

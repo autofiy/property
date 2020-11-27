@@ -1,3 +1,4 @@
+import { PropertiesConfiguration } from './../Core/PropertiesConfiguration';
 import { DefaultMiddlewareGroup } from './../Middleware/MiddlewareGroup';
 import { TitleMapperMiddleware } from './../Middleware/TitleMapperMiddleware';
 import { AutoDetectMiddleware } from '../Middleware/AutoDetectMiddleware';
@@ -6,18 +7,26 @@ import { MiddlewareGroup } from './../Middleware/MiddlewareGroup';
 import { GeneratorBase } from "./Generator";
 import { ExtraPropertiesMiddleware } from '../Middleware/ExtraPropertiesMiddleware';
 import { Middleware } from '../Middleware/Middleware';
+import { OrdererFactory } from '../Order/OrdererFactory';
+import { OrderingMiddleware } from '../Middleware/OrderingMiddleware';
 
-export class SmartPropertyGenerator extends GeneratorBase {
+export class SmartGenerator extends GeneratorBase {
+
+    private readonly ordererFactory: OrdererFactory;
+
+    constructor(configuration: PropertiesConfiguration, data: any, orderFactory: OrdererFactory) {
+        super(configuration, data);
+        this.ordererFactory = orderFactory;
+    }
 
     protected getMiddlewareGroup(): MiddlewareGroup {
         const configuration = this.getOptions();
-        // const orderingFactory = new DefaultPropertyOrderingFactory(configuration);
         const middlewareArr: Middleware[] = [
             new PassedPropertiesMiddleware(configuration),
             new AutoDetectMiddleware(this.getRow()),
             new TitleMapperMiddleware(configuration),
             new ExtraPropertiesMiddleware(configuration),
-            // new OrderingPropertyMiddleware(orderingFactory.getOrdering()),
+            new OrderingMiddleware(this.ordererFactory.getOrderer()),
         ];
         return new DefaultMiddlewareGroup(middlewareArr);
     }

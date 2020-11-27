@@ -26,11 +26,7 @@ export abstract class GeneratorBase implements Generator {
     }
 
     protected getRow(): any {
-        let data = this.data;
-        if (!data || !Array.isArray(data) || data.length === 0) {
-            return {};
-        }
-        return data[0];
+        return this.data ?? {};
     }
 
     protected abstract getMiddlewareGroup(): MiddlewareGroup;
