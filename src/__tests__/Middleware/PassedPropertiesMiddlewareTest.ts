@@ -20,7 +20,6 @@ describe("PassedPropertiesMiddleware", () => {
         const middleware = new PassedPropertiesMiddleware({});
         const properties: Property[] = [{ name: 'test', title: 'Test' }];
         const result = middleware.handle(properties);
-        console.log(result);
         expect(result).toEqual(properties);
         expect(middleware.shouldBreak()).toEqual(false);
     });

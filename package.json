@@ -4,7 +4,9 @@
   "description": "property utils for autofiy framework",
   "main": "main.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coverage"  : "jest --coverage",
+    "build" : "tsc --noEmit false"
   },
   "repository": {
     "type": "git",

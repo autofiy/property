@@ -26,7 +26,7 @@ describe("DefaultMiddlewareTest", () => {
         };
         const group = new DefaultMiddlewareGroup([
             new PassedPropertiesMiddleware(configuration),
-            new AutoDetectPropertiesMiddleware({ name: 'Ali', year: 1993 }),
+            new AutoDetectMiddleware({ name: 'Ali', year: 1993 }),
             new ExtraPropertiesMiddleware(configuration),
         ]);
         const properties = group.execute();

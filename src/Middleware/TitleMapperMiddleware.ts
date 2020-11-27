@@ -13,8 +13,9 @@ export class TitleMapperMiddleware extends MiddlewareBase {
 
     handle(properties: Property[]): Property[] {
         return properties.map(property => {
-            if (this.configuration.titles?.[property.name]) {
-                property.title = this.configuration.titles?.[property.name];
+            const title = this.configuration.titles?.[property.name];
+            if (title) {
+                property.title = title;
             }
             return { ...property };
         });

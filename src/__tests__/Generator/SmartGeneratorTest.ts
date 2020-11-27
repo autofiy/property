@@ -36,4 +36,12 @@ describe("SmartGenerator", () => {
             { name: "test", title: "Test" },
         ]);
     });
+
+    it("should use empty object when no data supplied", () => {
+        const configuration: PropertiesConfiguration = {};
+        const ordererFactory: OrdererFactory = new DefaultOrdererFactory(configuration);
+        const generator = new SmartGenerator(configuration, undefined, ordererFactory);
+        const properties = generator.generate();
+        expect(properties).toEqual([]);
+    });
 });

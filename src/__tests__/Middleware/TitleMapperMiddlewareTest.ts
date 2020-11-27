@@ -15,6 +15,17 @@ describe("TitleMapperMiddleware", () => {
         const result = middleware.handle(properties);
         const toMatchProperties: Property[] = [{ name: 'name', title: 'name' }, { name: 'age', title: 'THE Age' }, { name: 'year', title: 'THE Year' }];
         expect(result).toEqual(toMatchProperties);
-    })
+    });
+
+
+    it("should not map titles when no titles configuration supplied", () => {
+        const configuration: PropertiesConfiguration = {};
+        const middleware = new TitleMapperMiddleware(configuration);
+        const properties: Property[] = [{ name: 'name', title: 'name' }];
+        const result = middleware.handle(properties);
+        const toMatchProperties: Property[] = [{ name: 'name', title: 'name' }];
+        expect(result).toEqual(toMatchProperties);
+    });
+
 
 });

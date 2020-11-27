@@ -25,7 +25,7 @@ export abstract class GeneratorBase implements Generator {
         return this.configurations;
     }
 
-    protected getRow(): any {
+    protected getData(): any {
         return this.data ?? {};
     }
 

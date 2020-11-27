@@ -23,7 +23,7 @@ export class SmartGenerator extends GeneratorBase {
         const configuration = this.getOptions();
         const middlewareArr: Middleware[] = [
             new PassedPropertiesMiddleware(configuration),
-            new AutoDetectMiddleware(this.getRow()),
+            new AutoDetectMiddleware(this.getData()),
             new TitleMapperMiddleware(configuration),
             new ExtraPropertiesMiddleware(configuration),
             new OrderingMiddleware(this.ordererFactory.getOrderer()),
