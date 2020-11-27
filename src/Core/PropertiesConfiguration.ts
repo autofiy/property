@@ -1,4 +1,4 @@
-import { Transformer } from './../Transformation/PropertyTransformer';
+import { Transformer } from '../Transformer/Transformer';
 import { Property } from "./Property";
 
 export interface PropertiesConfiguration {
