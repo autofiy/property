@@ -1,6 +1,6 @@
 {
   "name": "@autofiy/property",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "property utils for autofiy framework",
   "main": "build/main.js",
   "types": "build/main.d.ts",
