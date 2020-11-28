@@ -2,11 +2,12 @@
   "name": "@autofiy/property",
   "version": "1.0.0",
   "description": "property utils for autofiy framework",
-  "main": "main.js",
+  "main": "build/main.js",
+  "types": "build/main.d.ts",
   "scripts": {
     "test": "jest",
-    "coverage"  : "jest --coverage",
-    "build" : "tsc --noEmit false"
+    "coverage": "jest --coverage",
+    "build": "tsc --noEmit false"
   },
   "repository": {
     "type": "git",
