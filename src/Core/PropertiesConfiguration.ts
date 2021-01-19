@@ -1,5 +1,5 @@
-import { Transformer } from '../Transformer/Transformer';
-import { Property } from "./Property";
+import {Transformer} from '../Transformer/Transformer';
+import {Property} from "./Property";
 
 export interface PropertiesConfiguration {
     properties?: Property[];
@@ -10,10 +10,10 @@ export interface PropertiesConfiguration {
         [name: string]: (property: Property, autofiyable: any) => any;
     },
     renderValue?: {
-        [name: string]: (property: Property, data: any, autofiyable: any) => any;
+        [name: string]: (property: Property, data: any, metadata: any, autofiyable: any) => any;
     },
     transformer?: {
-        [name: string]: (autofiyable: any) => Transformer
+        [name: string]: (metadata: any, autofiyable: any) => Transformer
     },
     extra?: any;
 }
